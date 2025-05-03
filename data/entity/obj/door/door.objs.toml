@@ -4249,6 +4249,18 @@ examine = "A grand door for a grand tree."
 id = 1969
 examine = "A grand door for a grand tree."
 
+[tree_gnome_gate_closed]
+id = 190
+examine = "A large gate in the gnome style."
+
+[tree_gnome_gate_west_opened]
+id = 191
+examine = "A large gate in the gnome style."
+
+[tree_gnome_gate_east_opened]
+id = 192
+examine = "A large gate in the gnome style."
+
 [brimstails_cave_entrance]
 id = 17209
 examine = "A small door in a hillock."
