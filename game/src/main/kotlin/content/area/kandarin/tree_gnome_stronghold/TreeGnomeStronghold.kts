@@ -32,7 +32,7 @@ objectOperate("Open", "tree_gnome_gate_closed") {
         player.face(target)
     }
     target.replace(target.id.replace("_closed", "_west_opened"), ticks = 4)
-    objects.add("tree_gnome_gate_east_opened", Tile(2462, 3383), ObjectShape.CENTRE_PIECE_STRAIGHT, 0, 4)
+    objects.add("tree_gnome_gate_east_opened", Tile(2462, 3383), ObjectShape.CENTRE_PIECE_STRAIGHT, 0, 4, false)
     player.walkOverDelay(player.tile.addY(if (player.tile.y < target.tile.y) 2 else -2))
 }
 
