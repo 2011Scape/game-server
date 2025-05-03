@@ -46,12 +46,12 @@ object Target {
                 return false
             }
             if (target.inWilderness) {
-//                val range = Wilderness.combatRange(source)
-//                if (target.combatLevel !in range) {
-//                    source.message("Your level difference is too great!")
-//                    source.message("You need to move deeper into the Wilderness.")
-//                    return false
-//                }
+                val range = Wilderness.combatRange(source)
+                if (target.combatLevel !in range) {
+                    source.message("Your level difference is too great!")
+                    source.message("You need to move deeper into the Wilderness.")
+                    return false
+                }
             }
         }
         // If the target I'm trying to attack is already in combat and I am not the attacker
