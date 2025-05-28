@@ -8,6 +8,8 @@ on:
     branches: [ 'main' ]
 env:
   CACHE_VERSION: 1.3.1
+  GRADLE_OPTS: -Xmx5g -Xms1g -XX:MaxMetaspaceSize=1g
+  ORG_GRADLE_PROJECT_kotlinDaemonJvmArgs: -Xmx3g -Xms512m -XX:MaxMetaspaceSize=512m
 jobs:
   test:
     name: Test
