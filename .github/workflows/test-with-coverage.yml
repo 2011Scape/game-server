@@ -1,4 +1,5 @@
 name: Run Tests
+
 on:
   push:
     branches:
@@ -6,15 +7,18 @@ on:
       - 'release/**'
   pull_request:
     branches: [ 'main' ]
+
 env:
   CACHE_VERSION: 1.3.1
-  GRADLE_OPTS: -Xmx5g -Xms1g -XX:MaxMetaspaceSize=1g
-  ORG_GRADLE_PROJECT_kotlinDaemonJvmArgs: -Xmx5g -Xms1g -XX:MaxMetaspaceSize=1g
+  GRADLE_OPTS: -Xmx3g -Xms1g -XX:MaxMetaspaceSize=1g
+  ORG_GRADLE_PROJECT_kotlinDaemonJvmArgs: -Xmx2g -Xms512m -XX:MaxMetaspaceSize=512m
+
 jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v4
@@ -32,7 +36,7 @@ jobs:
       - name: Validate Gradle wrapper
         uses: gradle/actions/wrapper-validation@v4
 
-      - name: Check if secrets exists
+      - name: Check if secrets exist
         id: check_secret
         run: |
           if [ -n "${{ secrets.AWS_ACCESS_KEY_ID }}" ]; then
@@ -54,11 +58,11 @@ jobs:
           key: cache-${{ env.cache_version }}-${{ hashFiles('data/cache/main_file_cache.idx255') }}
           path: data/cache/
           enableCrossOsArchive: 'true'
-          restore-keys:
+          restore-keys: |
             cache-${{ env.cache_version }}
             cache-
 
-      - name: Download game cache files  (on main branch only)
+      - name: Download game cache files (on main branch only)
         if: steps.check_secret.outputs.exists == 'true' && steps.cache-files.outputs.cache-hit != 'true'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -75,13 +79,16 @@ jobs:
             echo "cache_exists=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Clean build artifacts
+        run: ./gradlew clean
+
       - name: Run all tests
         if: steps.check-cache-files.outputs.cache_exists == 'true'
-        run: ./gradlew test
+        run: ./gradlew test --no-build-cache
 
-      - name: Run unit tests
+      - name: Run unit tests (fallback if no cache)
         if: steps.check-cache-files.outputs.cache_exists != 'true'
-        run: ./gradlew test -x :game:test
+        run: ./gradlew test -x :game:test --no-build-cache
 
       - name: Upload coverage report to Codecov
         if: steps.check_secret.outputs.exists == 'true'
