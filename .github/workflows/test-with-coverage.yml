@@ -88,4 +88,4 @@ jobs:
         uses: codecov/codecov-action@v4.1.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: GregHib/void
+          slug: 2011Scape/game-server
