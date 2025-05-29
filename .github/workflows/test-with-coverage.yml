@@ -10,8 +10,8 @@ on:
 
 env:
   CACHE_VERSION: 1.3.1
-  GRADLE_OPTS: -Xmx3g -Xms1g -XX:MaxMetaspaceSize=1g
-  ORG_GRADLE_PROJECT_kotlinDaemonJvmArgs: -Xmx2g -Xms512m -XX:MaxMetaspaceSize=512m
+  GRADLE_OPTS: -Xmx5g -Xms2g -XX:MaxMetaspaceSize=1g
+  ORG_GRADLE_PROJECT_kotlinDaemonJvmArgs: -Xmx4g -Xms1g -XX:MaxMetaspaceSize=1g
 
 jobs:
   test:
