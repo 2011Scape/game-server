@@ -13,6 +13,7 @@ spawns = [
     { id = "snake", x = 2754, y = 3171, members = true },
     { id = "snake", x = 2786, y = 3174, members = true },
     # 10801
+    { id = "saniboch", x = 2744, y = 3152, members = true },
     { id = "snake", x = 2739, y = 3169, members = true },
     { id = "snake", x = 2733, y = 3165, members = true },
     { id = "snake", x = 2751, y = 3166, members = true },
@@ -20,4 +21,6 @@ spawns = [
     { id = "snake", x = 2749, y = 3151, members = true },
     # 11058
     { id = "snake", x = 2772, y = 3209, members = true },
+    { id = "trader_crewmember_blue", x = 2759, y = 3239, members = true },
+    { id = "trader_crewmember_black", x = 2760, y = 3239, members = true },
 ]
