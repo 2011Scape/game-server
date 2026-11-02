@@ -12,7 +12,6 @@ import world.gregs.voidps.engine.entity.character.npc.NPC
 import world.gregs.voidps.engine.entity.character.player.skill.Skill
 import world.gregs.voidps.network.login.protocol.visual.update.HitSplat
 import kotlin.collections.set
-import kotlin.math.floor
 
 class CombatHitsplats : Script {
 
@@ -42,12 +41,9 @@ class CombatHitsplats : Script {
             if (type == "magic" && Tables.intOrNull("spells.$spell.max_hit") == -1) {
                 return
             }
-            var soak = 0
-            if (!source["insta_kill", false] && Settings["combat.damageSoak", true] && damage > 200) {
-                val percent = target["absorb_$type", 10] / 100.0
-                soak = floor((damage - 200) * percent).toInt()
-                damage -= soak
-            }
+            damage = it.damageBeforeHealthCap
+            var soak = Damage.absorbed(source, target, type, damage)
+            damage = (damage - soak).coerceAtMost(target.levels.get(Skill.Constitution))
             if (Settings["combat.showSoak", true] || soak <= 0) {
                 soak = -1
             }

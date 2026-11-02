@@ -12,6 +12,7 @@ import content.skill.melee.armour.barrows.BarrowsArmour
 import content.skill.melee.weapon.Weapon
 import content.skill.prayer.Prayer
 import world.gregs.voidps.engine.client.message
+import world.gregs.voidps.engine.data.Settings
 import world.gregs.voidps.engine.data.definition.Tables
 import world.gregs.voidps.engine.entity.character.Character
 import world.gregs.voidps.engine.entity.character.npc.NPC
@@ -23,10 +24,18 @@ import world.gregs.voidps.engine.queue.queue
 import world.gregs.voidps.engine.queue.strongQueue
 import world.gregs.voidps.network.login.protocol.visual.update.player.EquipSlot
 import world.gregs.voidps.type.random
+import kotlin.math.floor
 import kotlin.ranges.IntRange
 
 object Damage {
     private val logger = InlineLogger()
+    internal fun absorbed(source: Character, target: Character, type: String, damage: Int): Int {
+        if (damage <= 200 || source["insta_kill", false] || !Settings["combat.damageSoak", true]) {
+            return 0
+        }
+        val percent = target["absorb_$type", 0] / 100.0
+        return floor((damage - 200) * percent).toInt()
+    }
 
     /**
      * Rolls a real hit against [target] without modifiers

@@ -162,7 +162,8 @@ fun Character.hit(
     defensiveType: String = offensiveType,
     damage: Int = Damage.roll(this, target, offensiveType, weapon, spell, special, defensiveType),
 ): Int {
-    val actualDamage = Damage.modify(this, target, offensiveType, damage, weapon, spell, special)
+    val fullDamage = Damage.modify(this, target, offensiveType, damage, weapon, spell, special)
+    val actualDamage = (fullDamage - Damage.absorbed(this, target, offensiveType, fullDamage))
         .coerceAtMost(target.levels.get(Skill.Constitution))
     if (target is Player) {
         target.closeInterfaces()
@@ -174,11 +175,11 @@ fun Character.hit(
     }
     if (target is NPC) {
         target.queue("hit", if (delay == 0) 0 else CLIENT_TICKS.toTicks(delay) + 1) {
-            target.directHit(this@hit, actualDamage, offensiveType, weapon, spell, special)
+            target.directHit(this@hit, fullDamage, offensiveType, weapon, spell, special)
         }
     } else if (target is Player) {
         target.strongQueue("hit", if (delay == 0) 0 else CLIENT_TICKS.toTicks(delay) + 1) {
-            target.directHit(this@hit, actualDamage, offensiveType, weapon, spell, special)
+            target.directHit(this@hit, fullDamage, offensiveType, weapon, spell, special)
         }
     }
     return actualDamage
@@ -196,11 +197,12 @@ fun Character.directHit(source: Character, damage: Int, type: String = "damage",
     if (source.dead) {
         return
     }
+    val limitedDamage = if (type == "healed") damage else damage.coerceAtMost(levels.get(Skill.Constitution))
     if (this is Player) {
         closeInterfaces()
-        CombatApi.damage(this, CombatDamage(source, type, damage, weapon, spell, special))
+        CombatApi.damage(this, CombatDamage(source, type, limitedDamage, weapon, spell, special, damageBeforeHealthCap = damage))
     } else if (this is NPC) {
-        CombatApi.damage(this, CombatDamage(source, type, damage, weapon, spell, special))
+        CombatApi.damage(this, CombatDamage(source, type, limitedDamage, weapon, spell, special, damageBeforeHealthCap = damage))
     }
     if (source["debug", false] || this["debug", false]) {
         val player = if (this["debug", false] && this is Player) this else source as Player
