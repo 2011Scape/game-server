@@ -1,0 +1,62 @@
+[animated_bronze_armour]
+defend_anim = "human_defend"
+death_anim = "human_death"
+
+[animated_bronze_armour.melee]
+range = 1
+anim = "sword_slash"
+target_hit = { offense = "crush", max = 20 }
+
+[animated_iron_armour]
+defend_anim = "human_defend"
+death_anim = "human_death"
+
+[animated_iron_armour.melee]
+range = 1
+anim = "sword_slash"
+target_hit = { offense = "crush", max = 30 }
+
+[animated_steel_armour]
+defend_anim = "human_defend"
+death_anim = "human_death"
+
+[animated_steel_armour.melee]
+range = 1
+anim = "sword_slash"
+target_hit = { offense = "stab", max = 50 }
+
+[animated_black_armour]
+defend_anim = "human_defend"
+death_anim = "human_death"
+
+[animated_black_armour.melee]
+range = 1
+anim = "sword_slash"
+target_hit = { offense = "stab", max = 70 }
+
+[animated_mithril_armour]
+defend_anim = "human_defend"
+death_anim = "human_death"
+
+[animated_mithril_armour.melee]
+range = 1
+anim = "sword_slash"
+target_hit = { offense = "stab", max = 100 }
+
+[animated_adamant_armour]
+defend_anim = "human_defend"
+death_anim = "human_death"
+
+[animated_adamant_armour.melee]
+range = 1
+anim = "sword_slash"
+target_hit = { offense = "crush", max = 120 }
+
+[animated_rune_armour]
+defend_anim = "human_defend"
+death_anim = "human_death"
+
+[animated_rune_armour.melee]
+range = 1
+anim = "sword_slash"
+target_hit = { offense = "stab", max = 140 }
