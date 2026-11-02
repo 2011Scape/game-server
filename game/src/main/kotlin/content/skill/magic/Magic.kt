@@ -22,6 +22,15 @@ object Magic {
             return false
         }
         val spell = source.spell
+        val salamander = source.weapon.def["weapon_type", ""] == "salamander" && spell.isBlank()
+
+        if (salamander) {
+            source.anim("salamander_scorch")
+            source.gfx("salamander_blaze")
+            source.hit(target, delay = 0)
+            return true
+        }
+
         val row = Rows.get("spells.$spell")
         val time = time(source, target, row)
         source.anim(animation(source, row))
