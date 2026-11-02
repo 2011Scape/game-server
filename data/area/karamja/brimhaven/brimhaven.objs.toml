@@ -62,6 +62,10 @@ examine = "A closed overgrown dungeon entrance"
 id = 5106
 examine = "A closed overgrown dungeon entrance"
 
+[brimhaven_vine_5]
+id = 5107
+examine = "A closed overgrown dungeon entrance"
+
 [gangplank_brimhaven_enter]
 id = 2087
 examine = "Handy for boarding the ship."
