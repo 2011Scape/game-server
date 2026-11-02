@@ -67,7 +67,7 @@ slayer_xp = 100.0
 categories = ["hill_giants"]
 respawn_delay = 30
 examine = "A one-eyed woman eater."
-drop_table = "cyclops"
+drop_table = "warriors_guild_cyclops"
 combat_def = "cyclops"
 
 [cyclopse_hammer_steel]
@@ -83,7 +83,7 @@ slayer_xp = 55.0
 categories = ["hill_giants"]
 respawn_delay = 30
 examine = "A one-eyed man eater."
-drop_table = "cyclops"
+drop_table = "warriors_guild_cyclops"
 combat_def = "cyclops"
 
 [cyclopse_club_lepard]
@@ -91,7 +91,7 @@ id = 4291
 clone = "cyclopse_hammer_steel"
 hitpoints = 750
 def = 26
-drop_table = "cyclops"
+drop_table = "warriors_guild_cyclops"
 combat_def = "cyclops"
 
 [cyclopse_club]
@@ -101,19 +101,19 @@ hitpoints = 750
 att = 47
 str = 50
 def = 26
-drop_table = "cyclops"
+drop_table = "warriors_guild_cyclops"
 combat_def = "cyclops"
 
 [cyclopse_club_mohawk]
 id = 6079
 clone = "cyclopse_hammer"
-drop_table = "cyclops"
+drop_table = "warriors_guild_cyclops"
 combat_def = "cyclops"
 
 [cyclopse_knife]
 id = 4292
 clone = "cyclopse_hammer"
-drop_table = "cyclops"
+drop_table = "warriors_guild_cyclops"
 combat_def = "cyclops"
 
 [harrallak_menarous_2]

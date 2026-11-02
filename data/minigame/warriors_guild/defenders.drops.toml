@@ -1,0 +1,29 @@
+[warriors_guild_cyclops_drop_table]
+type = "all"
+drops = [
+    { table = "cyclops_drop_table" },
+    { table = "warriors_guild_defenders", variable = "warriors_guild_cyclops_paid", equals = true, default = false },
+]
+
+[warriors_guild_defenders]
+type = "all"
+drops = [
+    { table = "warriors_guild_metal_defender", roll = 50 },
+    { table = "warriors_guild_dragon_defender", roll = 100 },
+]
+
+[warriors_guild_metal_defender]
+drops = [
+    { id = "bronze_defender", variable = "warriors_guild_defender_tier", equals = 0, default = 0 },
+    { id = "iron_defender", variable = "warriors_guild_defender_tier", equals = 1, default = 0 },
+    { id = "steel_defender", variable = "warriors_guild_defender_tier", equals = 2, default = 0 },
+    { id = "black_defender", variable = "warriors_guild_defender_tier", equals = 3, default = 0 },
+    { id = "mithril_defender", variable = "warriors_guild_defender_tier", equals = 4, default = 0 },
+    { id = "adamant_defender", variable = "warriors_guild_defender_tier", equals = 5, default = 0 },
+    { id = "rune_defender", variable = "warriors_guild_defender_tier", equals = 6, default = 0 },
+]
+
+[warriors_guild_dragon_defender]
+drops = [
+    { id = "dragon_defender", variable = "warriors_guild_defender_tier", within_min = 7, within_max = 8, default = 0 },
+]

@@ -7,3 +7,8 @@ tags = ["teleport"]
 x = [2816, 2879]
 y = [3520, 3583]
 tags = ["no_cannon"]
+
+[warriors_guild_cyclops_room]
+x = [2847, 2878, 2878, 2837, 2837, 2847]
+y = [3533, 3533, 3557, 3557, 3543, 3543]
+level = 2

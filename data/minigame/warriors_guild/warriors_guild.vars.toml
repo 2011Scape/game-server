@@ -1,0 +1,6 @@
+[warriors_guild_defender_tier]
+format = "int"
+persist = true
+
+[warriors_guild_cyclops_paid]
+format = "boolean"
