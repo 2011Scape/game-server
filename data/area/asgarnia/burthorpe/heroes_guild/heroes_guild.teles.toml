@@ -4,7 +4,7 @@ option = "Climb-up"
 tile = { x = 2884, y = 9797 }
 delta = { y = -6398 }
 
-[1757]
+[tithe_roof_g]
 option = "Climb-up"
 tile = { x = 2892, y = 9907 }
 delta = { y = -6400 }

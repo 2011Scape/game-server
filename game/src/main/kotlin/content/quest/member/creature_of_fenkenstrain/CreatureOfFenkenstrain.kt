@@ -1,5 +1,6 @@
 package content.quest.member.creature_of_fenkenstrain
 
+import content.entity.obj.ObjectTeleports
 import content.entity.obj.door.Door
 import content.entity.obj.door.enterDoor
 import content.entity.player.dialogue.Neutral
@@ -34,7 +35,7 @@ import world.gregs.voidps.engine.inv.remove
 import world.gregs.voidps.type.Tile
 import world.gregs.voidps.type.equals
 
-class CreatureOfFenkenstrain : Script {
+class CreatureOfFenkenstrain(val teleports: ObjectTeleports) : Script {
 
     init {
 
@@ -294,6 +295,8 @@ class CreatureOfFenkenstrain : Script {
                 tele(3577, 3527, 0)
             } else if (target.tile.x == 3504 && target.tile.y == 9970) {
                 tele(3504, 3569, 0)
+            } else {
+                teleports.teleport(this, target, "Climb-up")
             }
         }
 
