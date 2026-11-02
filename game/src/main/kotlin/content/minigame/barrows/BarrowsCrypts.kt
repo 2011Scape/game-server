@@ -5,6 +5,8 @@ import content.entity.obj.door.enterDoor
 import content.entity.player.dialogue.type.choice
 import content.entity.player.dialogue.type.statement
 import content.entity.player.stat.KillTracker
+import content.minigame.barrows.BarrowsBrotherLifecycle.Companion.BROTHERS
+import content.minigame.barrows.BarrowsBrotherLifecycle.Companion.IDLE_TICKS
 import org.rsmod.game.pathfinder.collision.CollisionStrategies
 import world.gregs.voidps.engine.Script
 import world.gregs.voidps.engine.client.*
@@ -56,7 +58,7 @@ class BarrowsCrypts : Script {
             }
         }
 
-        npcSpawn("ahrim_the_blighted,dharok_the_wretched,guthan_the_infested,karil_the_tainted,torag_the_corrupted,verac_the_defiled") {
+        npcSpawn(BROTHERS) {
             val brother = id.substringBefore("_the_")
             set("${brother}_set_effect", true)
             when (brother) {
@@ -66,7 +68,7 @@ class BarrowsCrypts : Script {
             }
         }
 
-        npcDeath("ahrim_the_blighted,dharok_the_wretched,guthan_the_infested,karil_the_tainted,torag_the_corrupted,verac_the_defiled") {
+        npcDeath(BROTHERS) {
             val player = killer as? Player ?: return@npcDeath
             val brother = id.substringBefore("_the_")
             player["${brother}_killed"] = true
@@ -233,7 +235,7 @@ class BarrowsCrypts : Script {
     companion object {
         internal fun spawnBrother(player: Player, brother: String, tile: Tile?) {
             val id = Tables.npc("barrows_brothers.$brother.npc")
-            val npc = NPCs.add(id, tile ?: player.tile, ticks = TimeUnit.SECONDS.toTicks(60), owner = player)
+            val npc = NPCs.add(id, tile ?: player.tile, ticks = IDLE_TICKS, owner = player)
             npc.say(if (npc.tile.level == 3) "You dare disturb my rest!" else "You dare steal from us!")
             npc.interactPlayer(player, "Attack")
             player["${brother}_spawn"] = npc.index
