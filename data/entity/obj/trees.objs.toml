@@ -172,11 +172,6 @@ id = 3033
 stump = "tree_stump"
 examine = "One of the most common trees in Gielinor."
 
-[tree_58]
-id = 14308
-stump = "tree_stump"
-examine = "One of the most common trees in Gielinor."
-
 [tree_96]
 clone = "tree"
 id = 37477
@@ -450,11 +445,6 @@ examine = "It's only useful for hiding behind now."
 [dead_tree_16]
 id = 5904
 examine = "It's only useful for hiding behind now."
-
-[tree_59]
-id = 14309
-stump = "maple_tree_stump"
-examine = "A commonly found tree."
 
 [tree_98]
 clone = "tree"

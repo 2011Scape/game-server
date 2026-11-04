@@ -13,14 +13,12 @@ class IceSpells : Script {
     }
 
     fun attack(source: Character, attack: CombatAttack) {
-        val (target, damage, _, _, spell) = attack
-        if (damage <= 0 || !spell.startsWith("ice_")) {
-            return
-        }
-        val ticks = Tables.int("spells.$spell.freeze_ticks")
-        if (ticks <= 0) {
-            return
-        }
-        source.freeze(target, ticks)
+        source.applyIceFreeze(attack.target, attack.damage, attack.spell)
     }
+}
+
+internal fun Character.applyIceFreeze(target: Character, damage: Int, spell: String) {
+    if (damage <= 0 || !spell.startsWith("ice_")) return
+    val ticks = Tables.int("spells.$spell.freeze_ticks")
+    if (ticks > 0) freeze(target, ticks)
 }

@@ -1,0 +1,75 @@
+[pest_brawler]
+retreat_range = 64
+defend_anim = "pest_brawler_defend"
+death_anim = "pest_brawler_death"
+
+[pest_brawler.attack]
+range = 1
+anim = "pest_brawler_attack"
+target_hit = { offense = "crush", max = 70 }
+
+[pest_defiler]
+retreat_range = 64
+defend_anim = "pest_defiler_defend"
+death_anim = "pest_defiler_death"
+
+[pest_defiler.attack]
+range = 10
+anim = "pest_defiler_attack"
+gfx = "pest_defiler_cast"
+projectile = "pest_defiler_projectile"
+impact_gfx = "pest_defiler_impact"
+target_hit = { offense = "range", max = 60 }
+
+[pest_ravager]
+retreat_range = 64
+defend_anim = "pest_ravager_defend"
+death_anim = "pest_ravager_death"
+
+[pest_ravager.attack]
+range = 1
+anim = "pest_ravager_attack"
+target_hit = { offense = "crush", max = 70 }
+
+[pest_shifter]
+retreat_range = 64
+defend_anim = "pest_shifter_defend"
+death_anim = "pest_shifter_death"
+
+[pest_shifter.attack]
+range = 1
+anim = "pest_shifter_attack"
+target_hit = { offense = "crush", max = 50 }
+
+[pest_spinner]
+retreat_range = 64
+defend_anim = "pest_spinner_defend"
+death_anim = "pest_spinner_death"
+
+[pest_spinner.attack]
+range = 1
+anim = "pest_spinner_attack"
+target_hit = { offense = "crush", max = 30 }
+
+[pest_splatter]
+retreat_range = 64
+defend_anim = "pest_splatter_defend"
+death_anim = "pest_splatter_death"
+
+[pest_splatter.attack]
+range = 1
+anim = "pest_splatter_attack"
+target_hit = { offense = "crush", max = 30 }
+
+[pest_torcher]
+retreat_range = 64
+defend_anim = "pest_torcher_defend"
+death_anim = "pest_torcher_death"
+
+[pest_torcher.attack]
+range = 10
+anim = "pest_torcher_attack"
+gfx = "pest_torcher_cast"
+projectile = "pest_torcher_projectile"
+impact_gfx = "pest_torcher_impact"
+target_hit = { offense = "magic", max = 60 }

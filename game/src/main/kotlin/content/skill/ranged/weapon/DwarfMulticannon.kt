@@ -98,6 +98,10 @@ class DwarfMulticannon(private val lineValidator: LineValidator) : Script {
     }
 
     private suspend fun Player.setUpCannon() {
+        if (get("pest_control_return", false)) {
+            message("You cannot set up a cannon in Pest Control.")
+            return
+        }
         if (!questCompleted("dwarf_cannon")) {
             message("You have no idea how to operate this machine.")
             return

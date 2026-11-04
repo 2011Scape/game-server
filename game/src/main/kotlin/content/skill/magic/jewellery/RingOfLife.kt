@@ -43,6 +43,7 @@ class RingOfLife : Script {
     }
 
     private fun activateRingOfLife(player: Player) {
+        if (!Teleport.takeOff(player, "*", "")) return
         if (!player.equipment.discharge(player, EquipSlot.Ring.index)) {
             return
         }

@@ -40,6 +40,7 @@ examine = "A squire of balance."
 
 [squire_rangeshop_pest_control]
 id = 3796
+shop = "void_knight_archery_store"
 examine = "A squire of balance."
 
 [squire_blacksmith_pest_control]
@@ -48,10 +49,12 @@ examine = "A squire of balance."
 
 [squire_runeshop_pest_control]
 id = 3798
+shop = "void_knight_magic_store"
 examine = "A squire of balance."
 
 [squire_storemaster_pest_control]
 id = 3799
+shop = "void_knight_general_store"
 examine = "A squire of balance."
 
 [squire_ship_island_pest_control]
@@ -208,8 +211,12 @@ str = 57
 def = 43
 style = "crush"
 max_hit_melee = 70
+max_hit_crush = 70
 hunt_mode = "cowardly"
 examine = "Mind your toes!"
+combat_def = "pest_brawler"
+attack_speed = 4
+respawn_delay = -1
 
 [brawler_level_76]
 id = 3773
@@ -219,8 +226,12 @@ str = 82
 def = 67
 style = "crush"
 max_hit_melee = 90
+max_hit_crush = 90
 hunt_mode = "cowardly"
 examine = "Mind your toes!"
+combat_def = "pest_brawler"
+attack_speed = 4
+respawn_delay = -1
 
 [brawler_level_101]
 id = 3774
@@ -230,8 +241,12 @@ str = 107
 def = 93
 style = "crush"
 max_hit_melee = 120
+max_hit_crush = 120
 hunt_mode = "cowardly"
 examine = "Mind your toes!"
+combat_def = "pest_brawler"
+attack_speed = 4
+respawn_delay = -1
 
 [brawler_level_129]
 id = 3775
@@ -241,8 +256,12 @@ str = 132
 def = 118
 style = "crush"
 max_hit_melee = 140
+max_hit_crush = 140
 hunt_mode = "cowardly"
 examine = "Mind your toes!"
+combat_def = "pest_brawler"
+attack_speed = 4
+respawn_delay = -1
 
 [brawler_level_158]
 id = 3776
@@ -264,8 +283,12 @@ def = 17
 range = 46
 style = "range"
 max_hit_melee = 60
+max_hit_range = 60
 hunt_mode = "cowardly"
 examine = "Duck!"
+combat_def = "pest_defiler"
+attack_speed = 4
+respawn_delay = -1
 
 [defiler_level_33_2]
 id = 3763
@@ -282,8 +305,12 @@ def = 29
 range = 66
 style = "range"
 max_hit_melee = 80
+max_hit_range = 80
 hunt_mode = "cowardly"
 examine = "Duck!"
+combat_def = "pest_defiler"
+attack_speed = 4
+respawn_delay = -1
 
 [defiler_level_50_2]
 id = 3765
@@ -298,8 +325,12 @@ def = 41
 range = 84
 style = "range"
 max_hit_melee = 90
+max_hit_range = 90
 hunt_mode = "cowardly"
 examine = "Duck!"
+combat_def = "pest_defiler"
+attack_speed = 4
+respawn_delay = -1
 
 [defiler_level_67]
 id = 3767
@@ -322,8 +353,12 @@ def = 53
 range = 98
 style = "range"
 max_hit_melee = 110
+max_hit_range = 110
 hunt_mode = "cowardly"
 examine = "Duck!"
+combat_def = "pest_defiler"
+attack_speed = 4
+respawn_delay = -1
 
 [defiler_level_80_2]
 id = 3769
@@ -338,8 +373,12 @@ def = 65
 range = 117
 style = "range"
 max_hit_melee = 130
+max_hit_range = 130
 hunt_mode = "cowardly"
 examine = "Duck!"
+combat_def = "pest_defiler"
+attack_speed = 4
+respawn_delay = -1
 
 [defiler_level_97_2]
 id = 3771
@@ -351,6 +390,8 @@ def = 120
 mage = 0
 immune_poison = true
 examine = "The Void Knight will soon weaken the shield."
+hitpoints = 2500
+retaliates = false
 
 [portal_shield_blue]
 id = 6143
@@ -370,6 +411,8 @@ def = 120
 mage = 0
 immune_poison = true
 examine = "Not somewhere I want to go..."
+hitpoints = 2500
+retaliates = false
 
 [portal_blue]
 id = 6151
@@ -393,8 +436,12 @@ mage = 0
 range = 0
 style = "crush"
 max_hit_melee = 70
+max_hit_crush = 70
 hunt_mode = "cowardly"
 examine = "Worse than termites!"
+combat_def = "pest_ravager"
+attack_speed = 4
+respawn_delay = -1
 
 [ravager_level_53]
 id = 3743
@@ -406,8 +453,12 @@ mage = 0
 range = 0
 style = "crush"
 max_hit_melee = 90
+max_hit_crush = 90
 hunt_mode = "cowardly"
 examine = "Worse than termites!"
+combat_def = "pest_ravager"
+attack_speed = 4
+respawn_delay = -1
 
 [ravager_level_71]
 id = 3744
@@ -419,8 +470,12 @@ mage = 0
 range = 0
 style = "crush"
 max_hit_melee = 120
+max_hit_crush = 120
 hunt_mode = "cowardly"
 examine = "Worse than termites!"
+combat_def = "pest_ravager"
+attack_speed = 4
+respawn_delay = -1
 
 [ravager_level_89]
 id = 3745
@@ -432,8 +487,12 @@ mage = 0
 range = 0
 style = "crush"
 max_hit_melee = 140
+max_hit_crush = 140
 hunt_mode = "cowardly"
 examine = "Worse than termites!"
+combat_def = "pest_ravager"
+attack_speed = 4
+respawn_delay = -1
 
 [ravager_level_106]
 id = 3746
@@ -445,8 +504,12 @@ mage = 0
 range = 0
 style = "crush"
 max_hit_melee = 170
+max_hit_crush = 170
 hunt_mode = "cowardly"
 examine = "Worse than termites!"
+combat_def = "pest_ravager"
+attack_speed = 4
+respawn_delay = -1
 
 [shifter_level_38]
 id = 3732
@@ -458,9 +521,13 @@ mage = 27
 range = 0
 style = "stab"
 max_hit_melee = 50
+max_hit_crush = 50
 hunt_mode = "cowardly"
 immune_poison = true
 examine = "Nippy little thing!"
+combat_def = "pest_shifter"
+attack_speed = 4
+respawn_delay = -1
 
 [shifter_level_38_2]
 id = 3733
@@ -476,9 +543,13 @@ mage = 37
 range = 0
 style = "stab"
 max_hit_melee = 60
+max_hit_crush = 60
 hunt_mode = "cowardly"
 immune_poison = true
 examine = "Nippy little thing!"
+combat_def = "pest_shifter"
+attack_speed = 4
+respawn_delay = -1
 
 [shifter_level_57_2]
 id = 3735
@@ -494,9 +565,13 @@ mage = 47
 range = 0
 style = "stab"
 max_hit_melee = 80
+max_hit_crush = 80
 hunt_mode = "cowardly"
 immune_poison = true
 examine = "Nippy little thing!"
+combat_def = "pest_shifter"
+attack_speed = 4
+respawn_delay = -1
 
 [shifter_level_76_2]
 id = 3737
@@ -512,9 +587,13 @@ mage = 50
 range = 0
 style = "stab"
 max_hit_melee = 80
+max_hit_crush = 80
 hunt_mode = "cowardly"
 immune_poison = true
 examine = "Nippy little thing!"
+combat_def = "pest_shifter"
+attack_speed = 4
+respawn_delay = -1
 
 [shifter_level_90_2]
 id = 3739
@@ -530,9 +609,13 @@ mage = 60
 range = 0
 style = "stab"
 max_hit_melee = 90
+max_hit_crush = 90
 hunt_mode = "cowardly"
 immune_poison = true
 examine = "Nippy little thing!"
+combat_def = "pest_shifter"
+attack_speed = 4
+respawn_delay = -1
 
 [shifter_level_104_2]
 id = 3741
@@ -546,10 +629,13 @@ str = 17
 def = 43
 mage = 37
 range = 0
-style = "melee"
 style = "crush"
 max_hit_melee = 30
+max_hit_crush = 30
 examine = "Eeewww!"
+combat_def = "pest_spinner"
+attack_speed = 4
+respawn_delay = -1
 
 [spinner_level_55]
 id = 3748
@@ -559,10 +645,13 @@ str = 22
 def = 68
 mage = 52
 range = 0
-style = "melee"
 style = "crush"
 max_hit_melee = 30
+max_hit_crush = 30
 examine = "Eeewww!"
+combat_def = "pest_spinner"
+attack_speed = 4
+respawn_delay = -1
 
 [spinner_level_74]
 id = 3749
@@ -572,36 +661,45 @@ str = 27
 def = 93
 mage = 67
 range = 0
-style = "melee"
 style = "crush"
 max_hit_melee = 40
+max_hit_crush = 40
 examine = "Eeewww!"
+combat_def = "pest_spinner"
+attack_speed = 4
+respawn_delay = -1
 
 [spinner_level_88]
 id = 3751
-hitpoints = 1130
+hitpoints = 930
 att = 37
 str = 37
 def = 143
 mage = 37
 range = 0
-style = "melee"
 style = "crush"
 max_hit_melee = 50
+max_hit_crush = 50
 examine = "Eeewww!"
+combat_def = "pest_spinner"
+attack_speed = 4
+respawn_delay = -1
 
 [spinner_level_92]
 id = 3750
-hitpoints = 930
+hitpoints = 1010
 att = 32
 str = 32
 def = 118
 mage = 82
 range = 0
-style = "melee"
 style = "crush"
 max_hit_melee = 40
+max_hit_crush = 40
 examine = "Eeewww!"
+combat_def = "pest_spinner"
+attack_speed = 4
+respawn_delay = -1
 
 [splatter_level_22]
 id = 3727
@@ -613,8 +711,12 @@ mage = 17
 range = 0
 style = "crush"
 max_hit_melee = 30
+max_hit_crush = 30
 hunt_mode = "cowardly"
 examine = "Don't burst its bubble!"
+combat_def = "pest_splatter"
+attack_speed = 4
+respawn_delay = -1
 
 [splatter_level_33]
 id = 3728
@@ -626,8 +728,12 @@ mage = 22
 range = 0
 style = "crush"
 max_hit_melee = 30
+max_hit_crush = 30
 hunt_mode = "cowardly"
 examine = "Don't burst its bubble!"
+combat_def = "pest_splatter"
+attack_speed = 4
+respawn_delay = -1
 
 [splatter_level_44]
 id = 3729
@@ -639,8 +745,12 @@ mage = 27
 range = 0
 style = "crush"
 max_hit_melee = 40
+max_hit_crush = 40
 hunt_mode = "cowardly"
 examine = "Don't burst its bubble!"
+combat_def = "pest_splatter"
+attack_speed = 4
+respawn_delay = -1
 
 [splatter_level_54]
 id = 3730
@@ -652,8 +762,12 @@ mage = 32
 range = 0
 style = "crush"
 max_hit_melee = 40
+max_hit_crush = 40
 hunt_mode = "cowardly"
 examine = "Don't burst its bubble!"
+combat_def = "pest_splatter"
+attack_speed = 4
+respawn_delay = -1
 
 [splatter_level_65]
 id = 3731
@@ -665,8 +779,12 @@ mage = 37
 range = 0
 style = "crush"
 max_hit_melee = 50
+max_hit_crush = 50
 hunt_mode = "cowardly"
 examine = "Don't burst its bubble!"
+combat_def = "pest_splatter"
+attack_speed = 4
+respawn_delay = -1
 
 [torcher_level_33]
 id = 3752
@@ -678,8 +796,12 @@ mage = 46
 range = 0
 style = "ranged_magic"
 max_hit_melee = 60
+max_hit_magic = 60
 hunt_mode = "cowardly"
 examine = "Burn baby, burn!"
+combat_def = "pest_torcher"
+attack_speed = 4
+respawn_delay = -1
 
 [torcher_level_33_2]
 id = 3753
@@ -695,8 +817,12 @@ mage = 66
 range = 0
 style = "ranged_magic"
 max_hit_melee = 80
+max_hit_magic = 80
 hunt_mode = "cowardly"
 examine = "Burn baby, burn!"
+combat_def = "pest_torcher"
+attack_speed = 4
+respawn_delay = -1
 
 [torcher_level_49_2]
 id = 3755
@@ -716,8 +842,12 @@ mage = 85
 range = 0
 style = "ranged_magic"
 max_hit_melee = 90
+max_hit_magic = 90
 hunt_mode = "cowardly"
 examine = "Burn baby, burn!"
+combat_def = "pest_torcher"
+attack_speed = 4
+respawn_delay = -1
 
 [torcher_level_66_2]
 id = 3757
@@ -733,8 +863,12 @@ mage = 97
 range = 0
 style = "ranged_magic"
 max_hit_melee = 110
+max_hit_magic = 110
 hunt_mode = "cowardly"
 examine = "Burn baby, burn!"
+combat_def = "pest_torcher"
+attack_speed = 4
+respawn_delay = -1
 
 [torcher_level_79_2]
 id = 3759
@@ -742,7 +876,7 @@ clone = "torcher_level_79"
 
 [torcher_level_91]
 id = 3760
-hitpoints = 700
+hitpoints = 710
 att = 0
 str = 0
 def = 89
@@ -750,8 +884,12 @@ mage = 107
 range = 0
 style = "ranged_magic"
 max_hit_melee = 120
+max_hit_magic = 120
 hunt_mode = "cowardly"
 examine = "Burn baby, burn!"
+combat_def = "pest_torcher"
+attack_speed = 4
+respawn_delay = -1
 
 [torcher_level_92]
 id = 3761
@@ -771,6 +909,8 @@ id = 3782
 def = 50
 mage = 50
 examine = "A powerful knight of balance."
+hitpoints = 2000
+retaliates = false
 
 [torcher_level_49_4]
 id = 11534

@@ -3,3 +3,19 @@ format = "boolean"
 
 [elite_void_set_effect]
 format = "boolean"
+
+[pest_control_games]
+format = "int"
+persist = true
+
+[pest_control_points]
+format = "int"
+persist = true
+
+[pest_control_return]
+format = "boolean"
+persist = true
+
+[pest_control_lander]
+format = "int"
+persist = true

@@ -129,6 +129,13 @@ interface CombatApi {
         damages.getOrPut(style) { mutableListOf() }.add(handler)
     }
 
+    fun npcDamageModifier(npc: String, handler: NPC.(CombatDamage) -> Int) {
+        Script.checkLoading()
+        Wildcards.find(npc, Wildcard.Npc) { id ->
+            damageModifiers.getOrPut(id) { mutableListOf() }.add(handler)
+        }
+    }
+
     fun npcCombatDamage(npc: String = "*", style: String = "*", handler: NPC.(CombatDamage) -> Unit) {
         Script.checkLoading()
         Wildcards.find(npc, Wildcard.Npc) { id ->
@@ -163,6 +170,7 @@ interface CombatApi {
         private val attacks = Object2ObjectOpenHashMap<String, MutableList<Player.(CombatAttack) -> Unit>>(40)
         private val attackNpc = Object2ObjectOpenHashMap<String, MutableList<NPC.(CombatAttack) -> Unit>>(30)
         private val damages = Object2ObjectOpenHashMap<String, MutableList<Player.(CombatDamage) -> Unit>>(40)
+        private val damageModifiers = Object2ObjectOpenHashMap<String, MutableList<NPC.(CombatDamage) -> Int>>()
         private val damageNpc = Object2ObjectOpenHashMap<String, MutableList<NPC.(CombatDamage) -> Unit>>(30)
 
         private val specials = Object2ObjectOpenHashMap<String, Player.(Character, String) -> Unit>()
@@ -211,7 +219,14 @@ interface CombatApi {
             }
         }
 
-        fun damage(npc: NPC, damage: CombatDamage) {
+        fun damage(npc: NPC, original: CombatDamage) {
+            var damage = original
+            for (handler in damageModifiers[npc.id] ?: emptyList()) {
+                damage = damage.copy(damage = handler(npc, damage))
+            }
+            for (handler in damageModifiers["*"] ?: emptyList()) {
+                damage = damage.copy(damage = handler(npc, damage))
+            }
             for (handler in damageNpc["${npc.id}:${damage.type}"] ?: emptyList()) {
                 handler(npc, damage)
             }
@@ -311,6 +326,7 @@ interface CombatApi {
             attackNpc.clear()
             damages.clear()
             damageNpc.clear()
+            damageModifiers.clear()
             specials.clear()
             prepareSpecial.clear()
             damageSpecial.clear()

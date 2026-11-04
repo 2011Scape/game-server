@@ -96,6 +96,7 @@ object RandomEvents : AutoCloseable {
     }
 
     private fun eligible(player: Player): Boolean = !player.isBot &&
+        !player.get("pest_control_return", false) &&
         !optedOut(player) &&
         !player.contains("random_event") &&
         player.instance() == null &&
@@ -122,6 +123,7 @@ object RandomEvents : AutoCloseable {
      * event area) keeps the saved origin, so a leftover one from old state can never be reused.
      */
     fun start(player: Player, id: String? = pick(), resume: Boolean = false): Boolean {
+        if (player.get("pest_control_return", false)) return false
         val launcher = events[id ?: return false] ?: return false
         player["random_event"] = id
         if (!resume || !player.contains("random_event_origin")) {

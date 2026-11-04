@@ -13,9 +13,10 @@ fun jewelleryTeleport(player: Player, inventory: String, slot: Int, area: Area):
 fun Player.teleport(tile: Tile, type: String, force: Boolean = false) = Teleport.teleport(this, tile, type, force = force)
 
 fun itemTeleport(player: Player, inventory: String, slot: Int, area: Area, type: String): Boolean {
-    if (player.queue.contains(ActionPriority.Strong) || !player.inventories.inventory(inventory).discharge(player, slot)) {
+    if (player.queue.contains(ActionPriority.Strong) || !Teleport.takeOff(player, "*", "")) {
         return false
     }
     val tile = area.random(player) ?: return false
+    if (!player.inventories.inventory(inventory).discharge(player, slot)) return false
     return Teleport.teleport(player, tile, type, force = true)
 }

@@ -55,6 +55,10 @@ var Player.pet: NPC?
     }
 
 fun Player.summonPet(row: RowDefinition, itemId: String, restart: Boolean = false): Boolean {
+    if (get("pest_control_return", false)) {
+        message("Pets cannot enter Pest Control.")
+        return false
+    }
     if (pet != null ||
         follower != null ||
         (!restart && get("pet_active_item", "").isNotBlank())

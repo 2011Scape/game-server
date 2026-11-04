@@ -62,6 +62,10 @@ var Player.follower: NPC?
  * familiar timer
  */
 fun Player.summonFamiliar(familiar: NPCDefinition, restart: Boolean) {
+    if (get("pest_control_return", false)) {
+        message("Familiars cannot enter Pest Control.")
+        return
+    }
     if (follower != null || pet != null) {
         message("You already have a follower.")
         return
@@ -339,6 +343,7 @@ class Summoning : Script {
         }
 
         itemOption("Summon", "*_pouch") { option ->
+            if (get("pest_control_return", false)) return@itemOption message("Familiars cannot enter Pest Control.")
             val familiarLevel = EnumDefinitions.get("summoning_pouch_levels").int(option.item.def.id)
             val familiarId = EnumDefinitions.get("summoning_familiar_ids").int(option.item.def.id)
             val summoningXp = option.item.def["summon_experience", 0.0]

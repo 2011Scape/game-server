@@ -16,6 +16,7 @@ import world.gregs.voidps.engine.data.definition.Tables
 import world.gregs.voidps.engine.entity.character.areaSound
 import world.gregs.voidps.engine.entity.character.mode.EmptyMode
 import world.gregs.voidps.engine.entity.character.move.tele
+import world.gregs.voidps.engine.entity.character.player.Teleport
 import world.gregs.voidps.engine.entity.character.player.name
 import world.gregs.voidps.engine.entity.character.player.skill.Skill
 import world.gregs.voidps.engine.entity.character.player.skill.exp.exp
@@ -39,6 +40,7 @@ class TeleportOther : Script {
             }
 
             val spell = id.substringAfter(":")
+            if (!Teleport.takeOff(target, "teleother", spell)) return@onPlayerApproach
             if (!removeSpellItems(spell)) {
                 return@onPlayerApproach
             }
@@ -56,16 +58,19 @@ class TeleportOther : Script {
 
         continueDialogue("teleport_other:continue") {
             val location: String = get("tele_other_target") ?: return@continueDialogue
+            if (!Teleport.takeOff(this, "teleother", "teleother_$location")) return@continueDialogue
             closeInterfaces()
             if (queue.contains("teleport")) {
                 return@continueDialogue
             }
             queue("teleport") {
+                if (!Teleport.takeOff(this, "teleother", "teleother_$location")) return@queue
                 areaSound("teleport", tile = tile, radius = 10)
                 anim("teleport_other_impact")
                 gfx("teleport_other_impact")
                 delay(3)
                 clearAnim()
+                if (!Teleport.takeOff(this, "teleother", "teleother_$location")) return@queue
                 tele(Areas["${location}_teleport"])
             }
         }

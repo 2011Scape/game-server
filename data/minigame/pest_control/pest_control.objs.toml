@@ -13,3 +13,125 @@ examine = "Handy for boarding the ship."
 [rock_pool_small]
 id = 5605
 examine = "A small rock."
+
+[pest_novice_gangplank]
+id = 14315
+
+[pest_novice_ladder]
+id = 14314
+
+[pest_intermediate_gangplank]
+id = 25631
+
+[pest_veteran_gangplank]
+id = 25632
+
+[pest_intermediate_ladder]
+id = 25629
+
+[pest_veteran_ladder]
+id = 25630
+
+[pest_gate_left]
+id = 14233
+examine = "A strong gate."
+
+[pest_gate_right]
+id = 14235
+examine = "A strong gate."
+
+[pest_gate_open_left]
+id = 14234
+examine = "A strong gate."
+
+[pest_gate_open_right]
+id = 14236
+examine = "A strong gate."
+
+[pest_tower_ladder]
+id = 14296
+
+[pest_tree_1]
+id = 14308
+stump = "tree_stump"
+examine = "One of the most common trees in Gielinor."
+
+[pest_tree_2]
+id = 14309
+stump = "maple_tree_stump"
+examine = "A commonly found tree."
+
+[pest_barrier_14227]
+id = 14227
+
+[pest_barrier_14228]
+id = 14228
+
+[pest_barrier_14229]
+id = 14229
+
+[pest_barrier_14230]
+id = 14230
+
+[pest_barrier_14231]
+id = 14231
+
+[pest_barrier_14232]
+id = 14232
+
+[pest_barrier_14224]
+id = 14224
+
+[pest_barrier_14225]
+id = 14225
+
+[pest_barrier_14226]
+id = 14226
+
+[pest_gate_14237]
+id = 14237
+examine = "It should keep the monsters at bay for a little longer."
+
+[pest_gate_14238]
+id = 14238
+examine = "It should keep the monsters at bay for a little longer."
+
+[pest_gate_14239]
+id = 14239
+examine = "It should keep the monsters at bay for a little longer."
+
+[pest_gate_14240]
+id = 14240
+examine = "It should keep the monsters at bay for a little longer."
+
+[pest_gate_14241]
+id = 14241
+examine = "It's partially damaged."
+
+[pest_gate_14242]
+id = 14242
+examine = "It's partially damaged."
+
+[pest_gate_14243]
+id = 14243
+examine = "It's partially damaged."
+
+[pest_gate_14244]
+id = 14244
+examine = "It's partially damaged."
+
+[pest_gate_14245]
+id = 14245
+examine = "It's totally destroyed."
+
+[pest_gate_14246]
+id = 14246
+examine = "It's totally destroyed."
+
+[pest_gate_14247]
+id = 14247
+examine = "It's totally destroyed."
+
+[pest_gate_14248]
+id = 14248
+examine = "It's totally destroyed."
