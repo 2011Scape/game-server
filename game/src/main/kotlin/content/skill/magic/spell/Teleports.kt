@@ -51,6 +51,7 @@ class Teleports : Script {
                 total += delay
             }
             weakQueue("home_teleport", total) {
+                if (!Teleport.takeOff(this, "*", component)) return@weakQueue
                 start("teleport_delay", 1)
                 if (component == "lumbridge_home_teleport") {
                     tele(Areas["lumbridge_teleport"].random())

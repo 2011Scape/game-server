@@ -109,7 +109,7 @@ object Instances : Runnable {
     /**
      * Frees [instance] for re-use and removes everything left inside it
      */
-    private fun free(instance: Region) {
+    fun free(instance: Region) {
         if (used.remove(instance) == null) {
             return
         }

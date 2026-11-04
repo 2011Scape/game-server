@@ -58,7 +58,7 @@ object Target {
                 if (!target.def(source).options.contains("Attack")) {
                     return false
                 }
-            } else if (target.ownerIndex == -1 && !target.def.options.contains("Attack")) {
+            } else if (target.ownerIndex == -1 && !target.get("npc_combat_target", false) && !target.def.options.contains("Attack")) {
                 // A familiar's base form deliberately has no "Attack" option (its owner can't click
                 // it) yet npcs must still fight back against one - combat() re-validates every tick.
                 return false

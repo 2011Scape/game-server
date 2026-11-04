@@ -2,4 +2,22 @@
 x = [2624, 2687]
 y = [2560, 2623]
 level = 0
-tags = ["multi_combat", "no_cannon"]
+tags = ["multi_combat", "no_cannon", "no_random_events"]
+
+[pest_control_landers]
+x = [2659, 2664]
+y = [2637, 2644]
+level = 0
+tags = ["no_random_events"]
+
+[pest_control_intermediate_lander]
+x = [2637, 2642]
+y = [2641, 2647]
+level = 0
+tags = ["no_random_events"]
+
+[pest_control_veteran_lander]
+x = [2631, 2636]
+y = [2648, 2654]
+level = 0
+tags = ["no_random_events"]

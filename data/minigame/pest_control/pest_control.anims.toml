@@ -1,0 +1,65 @@
+[pest_brawler_attack]
+id = 3897
+
+[pest_brawler_defend]
+id = 3895
+
+[pest_brawler_death]
+id = 3894
+
+[pest_defiler_attack]
+id = 3920
+
+[pest_defiler_defend]
+id = 3921
+
+[pest_defiler_death]
+id = 3922
+
+[pest_ravager_attack]
+id = 3915
+
+[pest_ravager_defend]
+id = 3916
+
+[pest_ravager_death]
+id = 3917
+
+[pest_shifter_attack]
+id = 3901
+
+[pest_shifter_defend]
+id = 3902
+
+[pest_shifter_death]
+id = 3903
+
+[pest_spinner_attack]
+id = 3908
+
+[pest_spinner_defend]
+id = 3909
+
+[pest_spinner_death]
+id = 3910
+
+[pest_splatter_attack]
+id = 3891
+
+[pest_splatter_defend]
+id = 3890
+
+[pest_splatter_death]
+id = 3888
+
+[pest_torcher_attack]
+id = 3882
+
+[pest_torcher_defend]
+id = 3880
+
+[pest_torcher_death]
+id = 3881
+
+[pest_spinner_heal]
+id = 3908

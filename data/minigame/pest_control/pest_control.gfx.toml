@@ -1,2 +1,32 @@
 [portal]
 id = 654
+
+[pest_torcher_cast]
+id = 646
+
+[pest_torcher_projectile]
+id = 647
+delay = 30
+height = 40
+end_height = 32
+curve = 0
+time_offset = 8
+multiplier = 8
+
+[pest_torcher_impact]
+id = 648
+
+[pest_defiler_cast]
+id = 655
+
+[pest_defiler_projectile]
+id = 656
+delay = 30
+height = 40
+end_height = 32
+curve = 0
+time_offset = 8
+multiplier = 8
+
+[pest_defiler_impact]
+id = 657

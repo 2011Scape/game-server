@@ -1,40 +1,39 @@
 package content.bot.combat
 
+import content.minigame.pest_control.PestDifficulty
+import content.minigame.pest_control.boardCrew
+import content.minigame.pest_control.pestRole
+import content.minigame.pest_control.retireCrew
+import world.gregs.voidps.engine.data.Settings
 import world.gregs.voidps.engine.entity.character.player.Player
-import world.gregs.voidps.type.Tile
+import world.gregs.voidps.engine.entity.character.player.Players
 
-/**
- * Stub for pest control PvE minigame bots (NPC combat, defender role, wave timing).
- *
- * Not registered yet — the pest control implementation will land in a follow-up PR. That PR
- * is responsible for: BotFightNpc-based combat, portal/defender role assignment, wave timing,
- * and any minigame-specific drop / respawn semantics.
- */
-class PestControlBotContext : CombatBotContext {
+internal class PestControlBotContext {
+    private val landers = mutableMapOf<PestDifficulty, MutableList<Player>>()
 
-    override val id: String = "pest_control"
+    fun count(difficulty: PestDifficulty) = landers[difficulty]?.size ?: 0
 
-    override fun handles(tier: CombatTier): Boolean = tier.activityId.startsWith("pest_control_")
-
-    override fun load() {
-        // TODO(pest_control): load wave / role tables.
+    fun prepare(difficulty: PestDifficulty, humans: Int) {
+        val seats = if (humans > 0 && Settings["pestControl.crewEnabled", false]) 25 - humans else 0
+        if (seats == 0 && difficulty !in landers) return
+        val roles = difficulty.roles.take(seats)
+        val crew = landers.getOrPut(difficulty) { mutableListOf() }
+        for (bot in crew.toList()) {
+            if (bot.pestRole !in roles || Players.indexed(bot.index) !== bot || !difficulty.onBoat(bot.tile)) {
+                crew.remove(bot)
+                bot.retireCrew()
+            }
+        }
+        for (role in roles) {
+            if (crew.none { it.pestRole == role }) crew.add(difficulty.boardCrew(role) ?: break)
+        }
+        if (crew.isEmpty()) landers.remove(difficulty)
     }
 
-    override fun arenaKeys(): Set<String> = emptySet()
+    fun board(difficulty: PestDifficulty): List<Player> = landers.remove(difficulty).orEmpty()
 
-    override fun arenaSpawn(arenaKey: String): Tile? = null
-
-    override fun arenaTiers(arenaKey: String): List<CombatTier> = emptyList()
-
-    override fun autospawnIntervalTicks(arenaKey: String): Int = 0
-
-    override fun autospawnTarget(arenaKey: String): Int = 0
-
-    override fun arenaContains(arenaKey: String, tier: CombatTier): Boolean = false
-
-    /** Pest control: PvE minigame, no PK loot — bot keeps its kit. */
-    override fun shouldDropItems(player: Player, tier: CombatTier): Boolean = false
-
-    /** Pest control respawn defers to engine default until the wave/role logic ships. */
-    override fun respawnTile(tier: CombatTier): Tile? = null
+    fun reset() {
+        landers.values.flatten().forEach { it.retireCrew() }
+        landers.clear()
+    }
 }

@@ -1,9 +1,200 @@
 [pest_control_rewards]
 id = 267
+type = "main_screen"
+
+[.title]
+id = 93
+
+[.close]
+id = 94
+
+[.confirm]
+id = 96
+
+[.selection]
+id = 101
+
+[.reward_34]
+id = 34
+
+[.reward_35]
+id = 35
+
+[.reward_36]
+id = 36
+
+[.reward_37]
+id = 37
+
+[.reward_38]
+id = 38
+
+[.reward_39]
+id = 39
+
+[.reward_40]
+id = 40
+
+[.reward_41]
+id = 41
+
+[.reward_42]
+id = 42
+
+[.reward_43]
+id = 43
+
+[.reward_44]
+id = 44
+
+[.reward_45]
+id = 45
+
+[.reward_46]
+id = 46
+
+[.reward_48]
+id = 48
+
+[.reward_49]
+id = 49
+
+[.reward_50]
+id = 50
+
+[.reward_51]
+id = 51
+
+[.reward_52]
+id = 52
+
+[.reward_53]
+id = 53
+
+[.reward_54]
+id = 54
+
+[.reward_55]
+id = 55
+
+[.reward_56]
+id = 56
+
+[.reward_57]
+id = 57
+
+[.reward_58]
+id = 58
+
+[.reward_59]
+id = 59
+
+[.reward_60]
+id = 60
+
+[.reward_61]
+id = 61
+
+[.reward_62]
+id = 62
+
+[.reward_67]
+id = 67
+
+[.reward_68]
+id = 68
+
+[.reward_69]
+id = 69
+
+[.reward_70]
+id = 70
+
+[.reward_75]
+id = 75
+
+[.reward_76]
+id = 76
+
+[.reward_77]
+id = 77
+
+[.reward_78]
+id = 78
+
+[.reward_79]
+id = 79
+
+[.reward_80]
+id = 80
+
+[.reward_81]
+id = 81
+
+[.reward_82]
+id = 82
+
+[.reward_83]
+id = 83
+
+[.reward_84]
+id = 84
+
+[.reward_85]
+id = 85
+
+[.reward_86]
+id = 86
 
 [pest_control_waiting]
 id = 407
+type = "overlay"
+
+[.departure]
+id = 13
+
+[.players]
+id = 14
+
+[.required]
+id = 15
+
+[.points]
+id = 16
 
 [pest_control_playing]
 id = 408
+type = "overlay"
 
+[.time]
+id = 0
+
+[.knight]
+id = 1
+
+[.damage]
+id = 11
+
+[.purple_health]
+id = 13
+
+[.blue_health]
+id = 14
+
+[.yellow_health]
+id = 15
+
+[.red_health]
+id = 16
+
+[.purple_shield]
+id = 18
+
+[.blue_shield]
+id = 20
+
+[.yellow_shield]
+id = 22
+
+[.red_shield]
+id = 24

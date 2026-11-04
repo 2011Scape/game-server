@@ -70,10 +70,10 @@ interface Teleport {
         const val CANCEL = -1
 
         fun takeOff(player: Player, type: String, item: String): Boolean {
-            if (!invoke(takeOff[type], player, item)) {
+            if (!invoke(takeOff["*"], player, item)) {
                 return false
             }
-            return type == "*" || invoke(takeOff["*"], player, item)
+            return type == "*" || invoke(takeOff[type], player, item)
         }
 
         private fun invoke(handlers: Set<Player.(String) -> Boolean>?, player: Player, item: String): Boolean {
