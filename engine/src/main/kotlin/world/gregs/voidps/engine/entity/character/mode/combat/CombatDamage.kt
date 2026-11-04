@@ -19,4 +19,5 @@ data class CombatDamage(
     val weapon: Item,
     val spell: String,
     val special: Boolean,
+    val damageBeforeHealthCap: Int = damage,
 )
